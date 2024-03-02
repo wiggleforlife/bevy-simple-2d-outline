@@ -2,11 +2,11 @@ struct OutlineAndTextureMaterial {
     color: vec4<f32>,
     thickness : f32
 };
-@group(1) @binding(0)
+@group(2) @binding(0)
 var<uniform> material: OutlineAndTextureMaterial;
-@group(1) @binding(1)
+@group(2) @binding(1)
 var base_color_texture: texture_2d<f32>;
-@group(1) @binding(2)
+@group(2) @binding(2)
 var base_color_sampler: sampler;
 
 fn get_sample(
