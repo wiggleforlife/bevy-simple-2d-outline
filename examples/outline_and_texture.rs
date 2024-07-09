@@ -14,7 +14,7 @@ use bevy_simple_2d_outline::OutlineAndTextureMaterial;
 fn main() {
     App::new()
         .add_systems(Startup, setup)
-        .insert_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
+        .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))
         .add_plugins((
             DefaultPlugins.set(ImagePlugin::default_nearest()),
             Material2dPlugin::<OutlineAndTextureMaterial>::default()
@@ -32,7 +32,7 @@ fn setup(
         mesh: meshes.add(Rectangle::default()).into(),
         transform: Transform::default().with_scale(Vec3::splat(500.)),
         material: materials.add(OutlineAndTextureMaterial {
-            color: Color::BLUE,
+            color: LinearRgba::BLUE,
             thickness : 0.01,
             texture: asset_server.load("textures/sprite_seatoad.png"),
         }),

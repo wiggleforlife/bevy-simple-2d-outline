@@ -14,7 +14,7 @@ use bevy_simple_2d_outline::{RainbowOutlineAndTextureMaterial};
 fn main() {
     App::new()
         .add_systems(Startup, setup)
-        .insert_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
+        .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))
         .add_plugins((
             DefaultPlugins.set(ImagePlugin::default_nearest()),
             Material2dPlugin::<RainbowOutlineAndTextureMaterial>::default()

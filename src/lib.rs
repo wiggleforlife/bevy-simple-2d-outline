@@ -41,7 +41,7 @@ use bevy::{
 pub struct OutlineMaterial {
     /// The color of the outline.
     #[uniform(0)]
-    pub color: Color,
+    pub color: LinearRgba,
     /// The thickness of the outline. Preferred values between 0.01 and 0.005.
     #[uniform(0)]
     pub thickness: f32,
@@ -92,7 +92,7 @@ impl Material2d for OutlineMaterial {
 pub struct OutlineAndTextureMaterial {
     /// The color of the outline.
     #[uniform(0)]
-    pub color: Color,
+    pub color: LinearRgba,
     /// The thickness of the outline. Preferred values between 0.01 and 0.005.
     #[uniform(0)]
     pub thickness: f32,
@@ -111,7 +111,7 @@ impl Material2d for OutlineAndTextureMaterial {
 ///```
 /// fn main() {
 ///       App::new()
-///          .insert_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
+///          .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))
 ///         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
 ///         .add_plugin(Material2dPlugin::<RainbowOutlineMaterial>::default())
 ///         .add_startup_system(setup)
@@ -161,7 +161,7 @@ impl Material2d for RainbowOutlineMaterial {
 ///```
 /// fn main() {
 ///       App::new()
-///          .insert_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
+///          .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))
 ///         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
 ///         .add_plugin(Material2dPlugin::<RainbowOutlineAndTextureMaterial>::default())
 ///         .add_startup_system(setup)
