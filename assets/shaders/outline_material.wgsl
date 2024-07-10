@@ -15,7 +15,7 @@ fn get_sample(
     return textureSample(base_color_texture, base_color_sampler, probe).a;
 }
 
-#import bevy_pbr::forward_io::VertexOutput
+#import bevy_sprite::mesh2d_vertex_output::VertexOutput
 @fragment
 fn fragment(
     in: VertexOutput,

@@ -15,12 +15,13 @@ fn get_sample(
     return textureSample(base_color_texture, base_color_sampler, probe).a;
 }
 
-#import bevy_pbr::forward_io::VertexOutput
+#import bevy_sprite::mesh2d_vertex_output::VertexOutput
 @fragment
 fn fragment(
     in: VertexOutput,
 ) -> @location(0) vec4<f32> {
     var uv = in.uv;
+    in.
     var outline : f32 = get_sample(uv + vec2<f32>(material.thickness,0.0));
     outline += get_sample(uv + vec2<f32>(-material.thickness,0.0));
     outline += get_sample(uv + vec2<f32>(0.0,material.thickness));
